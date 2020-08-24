@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/enviroment'
+require 'bundler/setup'
+
+
+
+
+CLI.new.call
