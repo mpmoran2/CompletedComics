@@ -1,6 +1,6 @@
 class CLI
  
-    def call #✓
+    def welcome #✓ instance method to start it all. 
         puts ""
         puts "❀ ------------------------------------------❀ Welcome!❀ -------------------------------------------❀"
         puts "✦                               ~❀ This is the Completed Comics APP!❀ ~                            ✦"
@@ -8,8 +8,7 @@ class CLI
         puts "✦                                  ~❀ Let us begin, Dear Reader.❀ ~                                ✦"
         puts "❀ ----------------------------------------------❀ -❀ ----------------------------------------------❀"
         puts ""
-        sleep (1)
-        # wait a few seconds before showing genre_menu
+        sleep (1) # wait a few seconds before showing genre_menu
         genre_menu
     end 
     

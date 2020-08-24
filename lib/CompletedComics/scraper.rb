@@ -12,7 +12,7 @@ class Scraper
             type << g.to_s
         end
         type.uniq.each do |gen| #takes all those genres and condenses them into one of each in namearray  
-            Genre.new(gen.to_s)
+            Genre.new(gen.to_s) #creates a new instance 
         end 
       
     end

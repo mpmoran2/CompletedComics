@@ -2,4 +2,4 @@
 require 'bundler/setup'
 require './lib/enviroment'
 
-CLI.new.call
+CLI.new.welcome
