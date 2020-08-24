@@ -8,6 +8,7 @@ class CLI
         puts "✦                                  ~❀ Let us begin, Dear Reader.❀ ~                                ✦"
         puts "❀ ----------------------------------------------❀ -❀ ----------------------------------------------❀"
         puts ""
+        sleep (1)
         # wait a few seconds before showing genre_menu
         genre_menu
     end 
@@ -62,6 +63,7 @@ class CLI
         puts ""
         puts "❀ ----------------------------------------------❀ -❀ ----------------------------------------------❀"
         puts ""
+        sleep (1)
         menu_return
     end 
 
