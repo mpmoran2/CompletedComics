@@ -1,6 +1,6 @@
 class CLI
  
-    def welcome #✓ instance method to start it all. 
+    def welcome #✓ 
         puts ""
         puts "❀ ------------------------------------------❀ Welcome!❀ -------------------------------------------❀"
         puts "✦                               ~❀ This is the Completed Comics APP!❀ ~                            ✦"
@@ -8,7 +8,7 @@ class CLI
         puts "✦                                  ~❀ Let us begin, Dear Reader.❀ ~                                ✦"
         puts "❀ ----------------------------------------------❀ -❀ ----------------------------------------------❀"
         puts ""
-        sleep (1) # wait a few seconds before showing genre_menu
+        sleep (1) #✓ 
         genre_menu
     end 
     
@@ -36,42 +36,52 @@ class CLI
     end   
 
     def give_genres #✓
-        @genres.each.with_index(1) do |genre, index| #prints them as a list of 14 so that user can pick from there to got to menue with titles in it for them
+        @genres.each.with_index(1) do |genre, index| 
             puts "                                           #{index}. #{genre.type}"
         end 
     end 
 
     def choose_genre #✓
         chosen_genre = gets.strip.to_i
-        titles_for(chosen_genre) if accepted(chosen_genre.to_i, @genres) #asks to validate answer based on the list given in give_genres
+        titles_for(chosen_genre) if accepted(chosen_genre.to_i, @genres) 
     end 
 
-    def accepted(input, data)  #✓ validates an intiger input from choose_genre
-        input.to_i <= data.length && input.to_i > 0        
-    end 
-
-    def titles_for(chosen_genre) #gets titles from the chosen_genre to show a list of completed titles from that genre
-        genre = @genres[chosen_genre-1]    
-
-        puts ""
-        puts "✦ ----------------------------❀ Here are Comics for #{genre.type} ❀ ------------------------------------✦"
-        puts ""
-        Title.clear_all
-        the_comics(genre.type)
-        give_comics
+    def accepted(input, data)  #✓ 
+        if input <= data.length && input > 0
+            true
+        else 
         puts ""
         puts "❀ ----------------------------------------------❀ -❀ ----------------------------------------------❀"
+        puts "✦                                 ~❀ Please enter a number 1 to 14❀ ~                              ✦"
+        puts "❀ ----------------------------------------------❀ -❀ ----------------------------------------------❀"
         puts ""
-        sleep (1)
-        menu_return
+        Genre.clear_all
+        genre_menu
+        end 
     end 
 
-    def the_comics(genre)
+    def titles_for(chosen_genre) #✓ 
+        genre = @genres[chosen_genre-1]    
+        
+            puts ""
+            puts "✦ ----------------------------❀ Here are Comics for #{genre.type} ❀ ------------------------------------✦"
+            puts ""
+            Title.clear_all
+            the_comics(genre.type)
+            give_comics
+            puts ""
+            puts "❀ ----------------------------------------------❀ -❀ ----------------------------------------------❀"
+            puts ""
+            sleep (1)
+            menu_return
+    end 
+
+    def the_comics(genre) #✓
         Scraper.scrape_titles(genre)
-        @comics = Title.all
+        @comics = Title.sort_alpha
     end 
 
-    def give_comics
+    def give_comics #✓
         @comics.each.with_index(1) do |comic, index|
             puts "                          #{index}. #{comic.title} by #{comic.author} "
         end

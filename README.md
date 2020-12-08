@@ -1,6 +1,7 @@
 # CompletedComics
+For webcomic lovers who want to binge some completed works!
 
-Want to just binge a comic, no waiting for updates as you wait to see how that cliffhanger turned out? Completed Comics takes a look at all the completed comics and gives them to you by genre. Want to had a romance binge or spook yourself with some horror? CC will give you a list of just those comics and who wrote them (if you are particular about your authors).
+Want to just binge a comic, no waiting for updates as you wait to see how that cliffhanger turned out? Completed Comics takes a look at all the completed comics from WebToons.com and gives them to you by genre. Want to had a romance binge or spook yourself with some horror? CC will give you a list of just those comics and who wrote them (if you are particular about your authors).
 
 ## Installation
 

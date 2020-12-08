@@ -17,4 +17,9 @@ class Title
         @@all.clear
     end 
         
+    def self.sort_alpha
+        @@all.sort_by do |title|
+            title.title
+        end
+    end
 end 
